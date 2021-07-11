@@ -111,7 +111,8 @@ class Layout1Sidenav extends Component {
         </div>
         <div className="ml-8">
           <span className="username">
-            {user.displayName}
+            {/* {user.displayName} */}
+            {localStorage.getItem('firstName')+' '+localStorage.getItem('lastName')}
           </span>
           <div className="user__menu">
             <MatxMenu

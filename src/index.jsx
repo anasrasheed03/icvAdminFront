@@ -10,8 +10,8 @@ import App from "./app/App";
 import axios from 'axios';
 
 // cssVars();
-// axios.defaults.baseURL =  'http://localhost:8080/'
-axios.defaults.baseURL = 'https://icvback.herokuapp.com/'
+axios.defaults.baseURL =  'http://localhost:8080/'
+// axios.defaults.baseURL = 'https://icvback.herokuapp.com/'
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

@@ -38,6 +38,9 @@ function SendEmail(props) {
     );
     const [to, setTo] = useState('');
     const [from, setFrom] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const handleContentChange = contentHtml => {
 
         setContent(contentHtml);
@@ -53,6 +56,9 @@ function SendEmail(props) {
         const emailOb = {
             to: to,
             title: from,
+            name: name,
+            email: email,
+            password: password,
             content: content,
         }
 
@@ -60,6 +66,15 @@ function SendEmail(props) {
     }
     const handleChangeFrom = (e) => {
         setFrom(e.target.value);
+    }
+    const handleChangeName = (e) => {
+        setName(e.target.value);
+    }
+    const handleChangeEmail = (e) => {
+        setEmail(e.target.value);
+    }
+    const handleChangePassword = (e) => {
+        setPassword(e.target.value);
     }
     const [open, setOpen] = React.useState(false);
 
@@ -117,7 +132,7 @@ function SendEmail(props) {
                             id: 'age-native-simple',
                         }}
                     >
-                        <option aria-label="None" value="all">All</option>
+                        {/* <option aria-label="None" value="all">All</option> */}
 
                           {props.emailList.map((sub, index) => (
                         <option aria-label="None" value={sub.value} key={index}>{sub.label}</option>
@@ -136,6 +151,33 @@ function SendEmail(props) {
                     name="from"
                     value={from}
                     errorMessages={["this field is required", "Title is not valid"]}
+                />
+                <TextValidator
+                    className="mb-16 w-100"
+                    label="Sender Name"
+                    onChange={handleChangeName}
+                    type="text"
+                    name="name"
+                    value={name}
+                    errorMessages={["this field is required", "Name is not valid"]}
+                />
+                <TextValidator
+                    className="mb-16 w-100"
+                    label="Sender Email"
+                    onChange={handleChangeEmail}
+                    type="text"
+                    name="email"
+                    value={email}
+                    errorMessages={["this field is required", "Sender Email is not valid"]}
+                />
+                <TextValidator
+                    className="mb-16 w-100"
+                    label="Sender Password"
+                    onChange={handleChangePassword}
+                    type="text"
+                    name="password"
+                    value={password}
+                    errorMessages={["this field is required", "Sender Password is not valid"]}
                 />
                 <RichTextEditor
                     content={content}

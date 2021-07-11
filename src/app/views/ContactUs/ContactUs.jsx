@@ -100,6 +100,9 @@ function ContactUs(props) {
                 <TableCell className="px-0" colSpan={2}>
                   Phone
                 </TableCell>
+                <TableCell className="px-0" colSpan={2}>
+                  Contact Date
+                </TableCell>
                 {/* <TableCell className="px-0" colSpan={2}>
                   Message
                 </TableCell> */}
@@ -126,6 +129,9 @@ function ContactUs(props) {
                   </TableCell>
                   <TableCell className="px-0" align="left" colSpan={2}>
                     {product.phone}
+                  </TableCell>
+                  <TableCell className="px-0" align="left" colSpan={2}>
+                    {new Date(product.date).toLocaleDateString()}
                   </TableCell>
                   {/* <TableCell className="px-0" align="left" colSpan={2}>
                     {product.message}
